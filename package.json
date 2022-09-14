@@ -37,7 +37,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "prepare": "husky install"
     },
     "eslintConfig": {
         "extends": [
@@ -57,7 +58,7 @@
             "last 1 safari version"
         ]
     },
-     "husky": {
+    "husky": {
         "hooks": {
             "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
         }

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface ITabsProps {
     tabs: ITab[];
@@ -14,19 +14,21 @@ interface ITab {
 }
 
 interface IChildrenProps {
-    children: ReactNode
+    children: ReactNode;
 }
 
 interface ITabProps {
-    id: number;  
+    id: number;
     isFirst?: boolean;
     isLast?: boolean;
     children: ReactNode;
 }
 
-export type {
-    ITab,
-    ITabsProps,
-    IChildrenProps,
-    ITabProps
+interface ITabsContext {
+    activeTab: number;
+    setActiveTab: React.Dispatch<React.SetStateAction<number>>;
+    setTabs: React.Dispatch<React.SetStateAction<ITab[]>>;
+    tabs: ITab[];
 }
+
+export type { ITab, ITabsProps, IChildrenProps, ITabProps, ITabsContext };

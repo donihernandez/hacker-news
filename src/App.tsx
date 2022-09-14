@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import type { FC } from 'react'
+import { useState } from 'react';
+import { Header, Tabs } from './components';
 
-function App() {
+import { ITab } from './typings';
+
+const App: FC = () => {
+   const [tabs, setTabs] = useState<ITab[]>([
+    {
+      id: 1,
+      title: 'All',
+      isActive: true,
+      isFirst: true,
+    },
+    {
+      id: 2,
+      title: 'My Faves',
+      isLast: true,
+    }
+  ])
+
+  const updateActive = (id: number) => {
+    console.log(id);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Tabs tabs={tabs} updateActive={updateActive} />
+    </>
   );
 }
 

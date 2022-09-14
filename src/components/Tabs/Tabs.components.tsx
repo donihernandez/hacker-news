@@ -14,14 +14,12 @@ const TabsContainer: FC<IChildrenProps> = ({ children }) => {
 
 const Tab: FC<ITabProps> = ({
     id,
-    isActive,
     isFirst,
     isLast,
-    onClick,
     children
 }) => {
     return (
-        <button onClick={() => onClick(id)} className={`tab ${isActive && 'active'} ${isFirst && 'first'} ${isLast && 'last'}`}>
+        <button className={`tab ${isFirst && 'first'} ${isLast && 'last'}`}>
             {children}
         </button>
     )

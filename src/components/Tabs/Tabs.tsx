@@ -1,26 +1,27 @@
 import type { FC } from "react"
-import { ITabsProps } from "../../typings"
+import { useTabsContext } from "../../contexts/TabsContext"
+import { ITab } from "../../typings"
 import { Tab, TabsContainer } from "./Tabs.components"
 import './Tabs.css'
 
-const Tabs: FC<ITabsProps> = ({ tabs, updateActive }) => {
+const Tabs: FC = () => {
+    const { tabs } = useTabsContext();
+    console.log(context)
     return (
         <TabsContainer>
-            {
-                tabs.map(tab =>
+            {/* {
+                tabs.map((tab: ITab) =>
                 (
                     <Tab
                         id={tab.id}
                         key={tab.id}
-                        isActive={tab.isActive}
                         isFirst={tab.isFirst}
                         isLast={tab.isLast}
-                        onClick={updateActive}
                     >
                         {tab.title}
                     </Tab>
                 ))
-            }
+            } */}
         </TabsContainer>
     )
 }

@@ -9,6 +9,7 @@ import { NewsContext } from './context';
 const NewsProvider: FC<IChildrenProps> = ({ children }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [news, setNews] = useState([]);
+    const [favoriteNews, setFavoriteNews] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [currentOption, setCurrentOption] = useState('Select your news');
     const options = [
@@ -34,11 +35,23 @@ const NewsProvider: FC<IChildrenProps> = ({ children }) => {
         setCurrentPage(0);
     };
 
+    const navigatePages = async () => {
+        const newsData = await getNews(currentOption, currentPage.toString());
+        const mappedNews = mapNews(newsData.hits);
+        setNews(mappedNews);
+    };
+
     useEffect(() => {
         if (currentOption !== 'Select your news') {
             updateNews();
         }
     }, [currentOption]);
+
+    useEffect(() => {
+        if (currentOption !== 'Select your news') {
+            navigatePages();
+        }
+    }, [currentPage]);
 
     const value = {
         currentOption,

@@ -29,6 +29,10 @@
     color: #767676;
 }
 
+.navigation__link {
+    text-decoration: none;
+}
+
 .card__description {
     font-family: Roboto;
     font-size: 0.9rem;
@@ -37,6 +41,10 @@
     letter-spacing: 0.25px;
     color: #606060;
     margin-top: 0.5rem;
+}
+
+.card__description:hover {
+    color: #1890ff;
 }
 
 .card__favorites {

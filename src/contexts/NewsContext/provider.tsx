@@ -2,14 +2,12 @@ import { FC, useEffect } from 'react';
 import { useState } from 'react';
 import { getNews } from '../../api';
 import { mapNews } from '../../lib';
-import { client } from '../../lib/client';
 import { IChildrenProps } from '../../typings';
 import { NewsContext } from './context';
 
 const NewsProvider: FC<IChildrenProps> = ({ children }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [news, setNews] = useState([]);
-    const [favoriteNews, setFavoriteNews] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [currentOption, setCurrentOption] = useState('Select your news');
     const options = [

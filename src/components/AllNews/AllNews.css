@@ -1,0 +1,6 @@
+.all__news__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 9rem;
+}

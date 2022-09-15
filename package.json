@@ -40,12 +40,6 @@
         "eject": "react-scripts eject",
         "prepare": "husky install"
     },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
     "browserslist": {
         "production": [
             ">0.2%",
@@ -66,5 +60,10 @@
     "lint-staged": {
         "**.(js|ts|tsx|jsx)": "eslint --cache --fix",
         "*.{js,css,md}": "prettier --write"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }

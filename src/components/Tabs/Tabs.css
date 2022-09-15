@@ -1,3 +1,9 @@
+.tabs__section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .tabs__container {
     display: flex;
     justify-content: center;

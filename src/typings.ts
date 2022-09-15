@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface ITabsProps {
     tabs: ITab[];
@@ -26,9 +26,24 @@ interface ITabProps {
 
 interface ITabsContext {
     activeTab: number;
+    currentOption: string;
+    options: IDropdown[];
     setActiveTab: React.Dispatch<React.SetStateAction<number>>;
+    setCurrentOption: React.Dispatch<React.SetStateAction<string>>;
     setTabs: React.Dispatch<React.SetStateAction<ITab[]>>;
     tabs: ITab[];
 }
 
-export type { ITab, ITabsProps, IChildrenProps, ITabProps, ITabsContext };
+interface IDropdown {
+    image: string;
+    value: string;
+}
+
+export type {
+    ITab,
+    ITabsProps,
+    IChildrenProps,
+    ITabProps,
+    ITabsContext,
+    IDropdown,
+};

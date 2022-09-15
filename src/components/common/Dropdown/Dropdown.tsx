@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { useState } from 'react';
-import { useTabsContext } from '../../../contexts/TabsContext';
+import { useNewsContext } from '../../../contexts';
 
 import './Dropdown.css';
 
 const Dropdown: FC = () => {
     const [isActive, setIsActive] = useState(false);
-    const { options, currentOption, setCurrentOption } = useTabsContext();
+    const { options, currentOption, setCurrentOption } = useNewsContext();
 
     const handleSelection = (value: string) => {
         setCurrentOption(value);

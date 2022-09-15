@@ -1,13 +1,15 @@
 import type { FC } from 'react';
 import { Header, Tabs } from './components';
-import { TabsProvider } from './contexts/TabsContext';
+import { NewsProvider, TabsProvider } from './contexts';
 
 const App: FC = () => {
     return (
         <main>
             <Header />
             <TabsProvider>
-                <Tabs />
+                <NewsProvider>
+                    <Tabs />
+                </NewsProvider>
             </TabsProvider>
         </main>
     );

@@ -17,28 +17,10 @@ const TabsProvider: FC<IChildrenProps> = ({ children }) => {
         },
     ]);
     const [activeTab, setActiveTab] = useState(1);
-    const [currentOption, setCurrentOption] = useState('Select your news');
-    const options = [
-        {
-            image: '/images/angular.png',
-            value: 'angular',
-        },
-        {
-            image: '/images/react.png',
-            value: 'reactjs',
-        },
-        {
-            image: '/images/vue.png',
-            value: 'vuejs',
-        },
-    ];
 
     const value: ITabsContext = {
         activeTab,
-        currentOption,
-        options,
         setActiveTab,
-        setCurrentOption,
         setTabs,
         tabs,
     };

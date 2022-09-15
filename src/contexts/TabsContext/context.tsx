@@ -3,10 +3,7 @@ import { ITabsContext } from '../../typings';
 
 const TabsContext = createContext<ITabsContext>({
     activeTab: 1,
-    currentOption: '',
-    options: [],
     setActiveTab: () => null,
-    setCurrentOption: () => null,
     setTabs: () => null,
     tabs: [],
 });

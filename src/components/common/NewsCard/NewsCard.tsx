@@ -1,8 +1,9 @@
 import type { FC } from 'react';
+import { INews } from '../../../typings';
 
 import './NewsCard.css';
 
-const NewsCard: FC = () => {
+const NewsCard: FC<INews> = ({ author, title, isFavorite, id, url, date }) => {
     return (
         <article className="card">
             <div className="card__details">

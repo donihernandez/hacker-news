@@ -41,6 +41,7 @@
     box-shadow: 0 2px 2px 0 #dad8d8;
     background-color: #fff;
     left: 0;
+    z-index: 999;
 }
 
 .dropdown__item {

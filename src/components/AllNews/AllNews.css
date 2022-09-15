@@ -3,4 +3,13 @@
     flex-direction: column;
     width: 100%;
     padding: 3rem 9rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .all__news__container {
+        align-items: center;
+        justify-content: center;
+    }
 }

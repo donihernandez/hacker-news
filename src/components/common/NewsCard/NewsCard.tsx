@@ -12,9 +12,12 @@ const NewsCard: FC<INews> = ({ author, title, isFavorite, id, url, date }) => {
 
     const toggleFavorite = () => {
         const findNews = news.find(news => news.id === id);
+
         if (findNews) {
             findNews.isFavorite = !findNews.isFavorite;
-            setNews([...news, findNews]);
+            const filteredNews = news.filter(news => news.id !== id);
+            filteredNews.push(findNews);
+            setNews(filteredNews);
         }
     };
 
